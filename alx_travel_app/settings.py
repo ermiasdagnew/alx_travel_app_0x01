@@ -1,21 +1,18 @@
 import os
 from pathlib import Path
 
-# ----------------------------------------
-# BASE DIRECTORY
-# ----------------------------------------
+# Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ----------------------------------------
-# SECURITY SETTINGS
-# ----------------------------------------
-SECRET_KEY = 'replace-this-with-your-secret-key'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'your-secret-key'
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 ALLOWED_HOSTS = []
 
-# ----------------------------------------
-# INSTALLED APPS
-# ----------------------------------------
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -24,13 +21,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # project apps
-    'chats',
+    'rest_framework',
+    'drf_yasg',
+    'listings',
 ]
 
-# ----------------------------------------
-# MIDDLEWARE SETTINGS
-# ----------------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -39,26 +34,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    # custom middleware
-    'chats.middleware.RequestLoggingMiddleware',
-    'chats.middleware.RestrictAccessByTimeMiddleware',
-    'chats.middleware.OffensiveLanguageMiddleware',
-    'chats.middleware.RolepermissionMiddleware',
 ]
 
-# ----------------------------------------
-# ROOT URL
-# ----------------------------------------
-ROOT_URLCONF = 'messaging_app.urls'
+ROOT_URLCONF = 'alx_travel_app.urls'
 
-# ----------------------------------------
-# TEMPLATES
-# ----------------------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,14 +54,10 @@ TEMPLATES = [
     },
 ]
 
-# ----------------------------------------
-# WSGI
-# ----------------------------------------
-WSGI_APPLICATION = 'messaging_app.wsgi.application'
+WSGI_APPLICATION = 'alx_travel_app.wsgi.application'
+ASGI_APPLICATION = 'alx_travel_app.asgi.application'
 
-# ----------------------------------------
-# DATABASE
-# ----------------------------------------
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -86,9 +65,7 @@ DATABASES = {
     }
 }
 
-# ----------------------------------------
-# PASSWORD VALIDATION
-# ----------------------------------------
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -96,22 +73,28 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
 ]
 
-# ----------------------------------------
-# INTERNATIONALIZATION
-# ----------------------------------------
+# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
+USE_L10N = True
 USE_TZ = True
 
-# ----------------------------------------
-# STATIC FILES
-# ----------------------------------------
-STATIC_URL = 'static/'
+# Static files
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
-# ----------------------------------------
-# DEFAULT PK FIELD
-# ----------------------------------------
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# REST Framework configuration
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
+}
