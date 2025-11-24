@@ -1,11 +1,12 @@
-from rest_framework import routers
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from .views import ListingViewSet, BookingViewSet
 
-router = routers.DefaultRouter()
-router.register(r'listings', ListingViewSet)
-router.register(r'bookings', BookingViewSet)
+# Create DRF Router
+router = DefaultRouter()
+router.register('listings', ListingViewSet, basename='listing')
+router.register('bookings', BookingViewSet, basename='booking')
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]
