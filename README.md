@@ -1,24 +1,29 @@
-# ALX Travel App
+# ALX Travel App – API
 
-This Django REST Framework project provides CRUD API endpoints for managing travel listings and bookings. It also includes Swagger documentation for easy API exploration.
+## Description
+This project provides CRUD API endpoints for managing travel listings and bookings using Django REST Framework. API documentation is generated with Swagger.
 
-## Features
+---
 
-- Manage travel listings (Create, Read, Update, Delete)
-- Manage bookings for listings
-- API documentation via Swagger
-- Fully testable endpoints via Postman or Swagger UI
+## Endpoints
 
-## API Endpoints
+### Listings
+- GET `/api/listings/`
+- POST `/api/listings/`
+- GET `/api/listings/<id>/`
+- PUT `/api/listings/<id>/`
+- DELETE `/api/listings/<id>/`
 
-- `/api/listings/` - CRUD operations for listings
-- `/api/bookings/` - CRUD operations for bookings
-- `/swagger/` - Interactive API docs
+### Bookings
+- GET `/api/bookings/`
+- POST `/api/bookings/`
+- GET `/api/bookings/<id>/`
+- PUT `/api/bookings/<id>/`
+- DELETE `/api/bookings/<id>/`
 
-## Setup Instructions
+---
 
-1. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # Mac/Linux
-venv\Scripts\activate     # Windows
+## API Documentation
+
+Swagger available at:
+
