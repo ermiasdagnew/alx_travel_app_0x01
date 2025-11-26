@@ -38,3 +38,11 @@ This displays interactive API documentation.
 - Implement ViewSets in `listings/views.py`
 - Configure router in `listings/urls.py`
 - Test endpoints with Postman
+
+This displays interactive API documentation.
+
+## Instructions
+- Duplicate project from `alx_travel_app_0x00`
+- Implement ViewSets in `listings/views.py`
+- Configure router in `listings/urls.py`
+- Test endpoints with Postman
