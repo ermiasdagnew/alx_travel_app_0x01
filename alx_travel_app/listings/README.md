@@ -1,48 +1,52 @@
-# ALX Travel App - 0x01 API Development
+# ALX Travel App 0x01
 
 ## Overview
-This project extends the ALX Travel App by adding full CRUD API endpoints for **Listings** and **Bookings** using Django REST Framework (DRF).  
-It also integrates **Swagger documentation** for easy testing and exploration of the API.
+This project is a Django-based travel booking platform. It demonstrates API development using Django REST Framework (DRF) and Swagger documentation. This milestone focuses on:
 
-## Features
-- CRUD operations for Listings
-- CRUD operations for Bookings
-- DRF ModelViewSets for clean and reusable code
-- Automatic URL routing using DRF Routers
-- Swagger UI documentation using drf-yasg
-- Postman-tested API endpoints
+- Creating CRUD API endpoints for **Listings** and **Bookings**
+- Implementing `ModelViewSet` in DRF
+- Configuring RESTful API routes with routers
+- Documenting endpoints with Swagger
+- Testing API endpoints with Postman
+
+## Project Structure
 
 ## API Endpoints
-| Resource  | Method | Endpoint           | Description            |
-|-----------|--------|--------------------|------------------------|
-| Listings  | GET    | `/api/listings/`   | List all listings      |
-| Listings  | POST   | `/api/listings/`   | Create a listing       |
-| Listings  | GET    | `/api/listings/<id>/` | Retrieve listing   |
-| Listings  | PUT    | `/api/listings/<id>/` | Update listing     |
-| Listings  | DELETE | `/api/listings/<id>/` | Delete listing     |
-| Bookings  | Same pattern as above | `/api/bookings/` | CRUD for bookings |
 
-## Technologies Used
-- Django 4.x
-- Django REST Framework
-- drf-yasg (Swagger documentation)
-- SQLite/PostgreSQL (depending on your setup)
+All API endpoints are under `/api/`.
+
+### Listings
+
+| Method | URL                     | Description             |
+|--------|------------------------|-------------------------|
+| GET    | /api/listings/          | List all listings       |
+| POST   | /api/listings/          | Create a new listing    |
+| GET    | /api/listings/{id}/     | Retrieve a listing      |
+| PUT    | /api/listings/{id}/     | Update a listing        |
+| DELETE | /api/listings/{id}/     | Delete a listing        |
+
+### Bookings
+
+| Method | URL                     | Description             |
+|--------|------------------------|-------------------------|
+| GET    | /api/bookings/          | List all bookings       |
+| POST   | /api/bookings/          | Create a new booking    |
+| GET    | /api/bookings/{id}/     | Retrieve a booking      |
+| PUT    | /api/bookings/{id}/     | Update a booking        |
+| DELETE | /api/bookings/{id}/     | Delete a booking        |
 
 ## Swagger Documentation
-After running the server:
 
-This displays interactive API documentation.
+Swagger interactive API docs are available at:
 
-## Instructions
-- Duplicate project from `alx_travel_app_0x00`
-- Implement ViewSets in `listings/views.py`
-- Configure router in `listings/urls.py`
-- Test endpoints with Postman
 
-This displays interactive API documentation.
+## Testing
 
-## Instructions
-- Duplicate project from `alx_travel_app_0x00`
-- Implement ViewSets in `listings/views.py`
-- Configure router in `listings/urls.py`
-- Test endpoints with Postman
+Use **Postman** or any API client to test GET, POST, PUT, DELETE requests.
+
+---
+
+## Notes
+
+- All endpoints follow RESTful conventions.
+- Ensure the server is running (`python manage.py runserver`) before testing.
