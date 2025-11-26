@@ -31,3 +31,10 @@ It also integrates **Swagger documentation** for easy testing and exploration of
 ## Swagger Documentation
 After running the server:
 
+This displays interactive API documentation.
+
+## Instructions
+- Duplicate project from `alx_travel_app_0x00`
+- Implement ViewSets in `listings/views.py`
+- Configure router in `listings/urls.py`
+- Test endpoints with Postman
