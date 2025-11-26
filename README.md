@@ -1,11 +1,33 @@
-# ALX Travel App 0x00
+# ALX Travel App - 0x01 API Development
 
 ## Overview
-This project is a Django-based travel booking platform. It demonstrates database modeling, API serialization using Django REST Framework (DRF), and automated database seeding with sample data. The project includes **Listings**, **Bookings**, and **Reviews** models.
+This project extends the ALX Travel App by adding full CRUD API endpoints for **Listings** and **Bookings** using Django REST Framework (DRF).  
+It also integrates **Swagger documentation** for easy testing and exploration of the API.
 
-This milestone focuses on:
-- Defining models with proper relationships and constraints
-- Creating serializers for API data representation
-- Implementing a management command to seed the database
+## Features
+- CRUD operations for Listings
+- CRUD operations for Bookings
+- DRF ModelViewSets for clean and reusable code
+- Automatic URL routing using DRF Routers
+- Swagger UI documentation using drf-yasg
+- Postman-tested API endpoints
 
-## Project Structure
+## API Endpoints
+| Resource  | Method | Endpoint           | Description            |
+|-----------|--------|--------------------|------------------------|
+| Listings  | GET    | `/api/listings/`   | List all listings      |
+| Listings  | POST   | `/api/listings/`   | Create a listing       |
+| Listings  | GET    | `/api/listings/<id>/` | Retrieve listing   |
+| Listings  | PUT    | `/api/listings/<id>/` | Update listing     |
+| Listings  | DELETE | `/api/listings/<id>/` | Delete listing     |
+| Bookings  | Same pattern as above | `/api/bookings/` | CRUD for bookings |
+
+## Technologies Used
+- Django 4.x
+- Django REST Framework
+- drf-yasg (Swagger documentation)
+- SQLite/PostgreSQL (depending on your setup)
+
+## Swagger Documentation
+After running the server:
+
