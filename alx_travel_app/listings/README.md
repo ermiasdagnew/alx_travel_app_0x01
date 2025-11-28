@@ -1,17 +1,26 @@
-# Listings & Bookings API
+# alx_travel_app_0x01
 
-## Endpoints
+## API Development for Listings & Bookings
 
-- `GET /api/listings/` - List all listings
-- `POST /api/listings/` - Create a listing
-- `PUT /api/listings/{id}/` - Update a listing
-- `DELETE /api/listings/{id}/` - Delete a listing
-- `GET /api/bookings/` - List all bookings
-- `POST /api/bookings/` - Create a booking
-- `PUT /api/bookings/{id}/` - Update a booking
-- `DELETE /api/bookings/{id}/` - Delete a booking
+### Features
+- CRUD API for Listing model
+- CRUD API for Booking model
+- ViewSets and Routers using Django REST Framework
+- API documentation using Swagger (drf-yasg)
 
-## Swagger UI
+### Endpoints
+Base URL: /api/
 
-Access at `/swagger/` to see all endpoints with documentation.
+- /api/listings/
+- /api/bookings/
 
+### Swagger Documentation
+Visit:
+- /swagger/
+- /redoc/
+
+### How to run
+```bash
+pip install -r requirements.txt
+python3 manage.py migrate
+python3 manage.py runserver
