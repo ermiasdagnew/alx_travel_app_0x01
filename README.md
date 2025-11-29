@@ -1,16 +1,12 @@
-# Listings & Bookings API
+# ALX Travel App 0x01
 
-## Endpoints
+This project implements API development for Listings and Bookings using Django REST Framework.
 
-- `GET /api/listings/` - List all listings
-- `POST /api/listings/` - Create a listing
-- `PUT /api/listings/{id}/` - Update a listing
-- `DELETE /api/listings/{id}/` - Delete a listing
-- `GET /api/bookings/` - List all bookings
-- `POST /api/bookings/` - Create a booking
-- `PUT /api/bookings/{id}/` - Update a booking
-- `DELETE /api/bookings/{id}/` - Delete a booking
+## Features
+- ModelViewSet for Listing and Booking
+- CRUD operations for all endpoints
+- Router-based URL configuration under /api/
+- Swagger documentation at /swagger/
 
-## Swagger UI
-
-Access at `/swagger/` to see all endpoints with documentation.
+## Directory
+alx_travel_app_0x01/alx_travel_app
